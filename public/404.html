@@ -11,10 +11,16 @@
       URL into a query string and redirects to index.html, where a small
       script in index.html restores the original path via
       history.replaceState before React Router takes over.
+
+      IMPORTANT: `BASE_PATH` below must always match the `base` option in
+      vite.config.ts (and the VITE_BASE_PATH env var, if overridden). It is
+      declared once here so the segment count is derived automatically
+      instead of being duplicated as a magic number.
     -->
     <script>
       (function () {
-        var segmentCount = 1; // number of path segments that make up the base (repo name)
+        var BASE_PATH = '/Bamboutos-Menoua/'; // keep in sync with vite.config.ts `base`
+        var segmentCount = BASE_PATH.split('/').filter(Boolean).length;
         var l = window.location;
         var pathParts = l.pathname.split('/');
         var basePath = pathParts.slice(0, 1 + segmentCount).join('/');
