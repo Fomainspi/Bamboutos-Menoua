@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fomainspi.github.io/Bamboutos-Menoua/sitemap.xml

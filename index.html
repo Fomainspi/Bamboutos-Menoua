@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Bamboutos–Menoua — Préserver notre patrimoine. Célébrer notre culture. Connecter notre communauté."
+    />
+    <title>Bamboutos–Menoua | Culture • Patrimoine • Communauté</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      // Restore the original path after the GitHub Pages SPA 404 redirect
+      // (see public/404.html for the corresponding rewrite).
+      (function () {
+        var l = window.location;
+        if (l.search[1] === 'p' && l.search[2] === '=') {
+          var decoded = l.search
+            .slice(1)
+            .split('&')
+            .map(function (s) {
+              return s.replace(/~and~/g, '&');
+            });
+          var params = {};
+          decoded.forEach(function (pair) {
+            var idx = pair.indexOf('=');
+            params[pair.slice(0, idx)] = pair.slice(idx + 1);
+          });
+          window.history.replaceState(
+            null,
+            '',
+            l.pathname.slice(0, -1) + (params.p || '') + (params.q ? '?' + params.q : '') + l.hash,
+          );
+        }
+      })();
+    </script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

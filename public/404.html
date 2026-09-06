@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Bamboutos–Menoua</title>
+    <!--
+      GitHub Pages SPA fallback (based on the well-known
+      spa-github-pages technique by Rafael Pedicini). GitHub Pages does
+      not support server-side rewrites, so any direct request to a route
+      like /bamboutos returns this 404 page. This script rewrites the
+      URL into a query string and redirects to index.html, where a small
+      script in index.html restores the original path via
+      history.replaceState before React Router takes over.
+    -->
+    <script>
+      (function () {
+        var segmentCount = 1; // number of path segments that make up the base (repo name)
+        var l = window.location;
+        var pathParts = l.pathname.split('/');
+        var basePath = pathParts.slice(0, 1 + segmentCount).join('/');
+        var restPath = pathParts.slice(1 + segmentCount).join('/');
+        l.replace(
+          basePath +
+            '/?p=/' +
+            restPath.replace(/&/g, '~and~') +
+            (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+            l.hash,
+        );
+      })();
+    </script>
+  </head>
+  <body></body>
+</html>

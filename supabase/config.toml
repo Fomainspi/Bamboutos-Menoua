@@ -1,0 +1,3 @@
+# Minimal Supabase local development configuration reference.
+# See https://supabase.com/docs/guides/local-development for full options.
+project_id = "bamboutos-menoua"
