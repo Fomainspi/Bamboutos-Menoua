@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+/* -------------------------------------------------------------------------
+ * Bamboutos–Menoua design tokens.
+ * A single source of truth for the cultural color palette so that colors
+ * are never hard-coded throughout components. Update these variables to
+ * re-theme the whole application.
+ * ---------------------------------------------------------------------- */
+@theme {
+  --color-heritage-green: #1f4d3a;
+  --color-heritage-green-dark: #123024;
+  --color-heritage-brown: #6b4226;
+  --color-heritage-gold: #c9962c;
+  --color-heritage-gold-light: #e3b656;
+  --color-heritage-cream: #faf5ea;
+  --color-heritage-charcoal: #211f1c;
+
+  --font-display: "Georgia", "Iowan Old Style", serif;
+  --font-body:
+    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-heritage-cream);
+  color: var(--color-heritage-charcoal);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-heritage-gold);
+  outline-offset: 2px;
+}
